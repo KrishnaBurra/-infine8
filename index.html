@@ -22,7 +22,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: 100vh;
       text-align: center;
       padding: 1rem;
     }
@@ -51,7 +51,8 @@
     .btn:hover {
       background-color: #008ecc;
     }
-svxv 
+
+    nav {
       position: fixed;
       top: 1rem;
       left: 1rem;
@@ -92,6 +93,25 @@ svxv
     .menu.active {
       display: flex;
     }
+
+    section {
+      margin-top: 4rem;
+      padding: 2rem;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: none;
+    }
   </style>
 </head>
 
@@ -119,13 +139,67 @@ svxv
     <a href="#register" class="btn">Register</a>
     <a href="#login" class="btn">Login</a>
   </div>
-</body>
 
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById("menu");
-    menu.classList.toggle("active");
-  }
-</script>
+  <section id="register">
+    <h2>Register / Login</h2>
+    <form>
+      <input type="text" placeholder="Username" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button class="btn" type="submit">Submit</button>
+    </form>
+  </section>
+
+  <section id="upload">
+    <h2>Upload Content</h2>
+    <form action="https://formsubmit.co/burra.mohan.krishna@outlook.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Describe your content..." required></textarea>
+      <button class="btn" type="submit">Upload</button>
+    </form>
+  </section>
+
+  <section id="share">
+    <h2>Share a Moment</h2>
+    <form action="https://formsubmit.co/burra.mohan.krishna@outlook.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <textarea name="moment" placeholder="Describe your moment..." required></textarea>
+      <button class="btn" type="submit">Share</button>
+    </form>
+  </section>
+
+  <section id="join">
+    <h2>Join the Infine8 Team</h2>
+    <form action="https://formsubmit.co/burra.mohan.krishna@outlook.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="why" placeholder="Why do you want to join?" required></textarea>
+      <button class="btn" type="submit">Apply</button>
+    </form>
+  </section>
+
+  <section id="bug">
+    <h2>Report a Bug</h2>
+    <form action="https://formsubmit.co/burra.mohan.krishna@outlook.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <textarea name="bug" placeholder="Describe the bug..." required></textarea>
+      <button class="btn" type="submit">Report</button>
+    </form>
+  </section>
+
+  <section id="workout">
+    <h2>Summer Workout</h2>
+    <p>Coming Soon...</p>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("active");
+    }
+  </script>
+
+</body>
 
 </html>
