@@ -2,204 +2,129 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Infine8 Pages</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #111;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    header {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .btn-container {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .btn {
-      padding: 0.75rem 1.5rem;
-      background-color: #00aaff;
-      border: none;
-      border-radius: 10px;
-      color: white;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background-color: #008ecc;
-    }
-
-    nav {
-      position: fixed;
-      top: 1rem;
-      left: 1rem;
-    }
-
-    .hamburger {
-      cursor: pointer;
-      width: 30px;
-      height: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .hamburger div {
-      height: 4px;
-      background: white;
-      border-radius: 2px;
-    }
-
-    .menu {
-      display: none;
-      flex-direction: column;
-      background: #222;
-      position: absolute;
-      top: 40px;
-      left: 0;
-      padding: 1rem;
-      border-radius: 10px;
-    }
-
-    .menu a {
-      color: white;
-      text-decoration: none;
-      margin: 0.5rem 0;
-    }
-
-    .menu.active {
-      display: flex;
-    }
-
-    section {
-      margin-top: 4rem;
-      padding: 2rem;
-      max-width: 600px;
-      width: 100%;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    input, textarea {
-      padding: 0.75rem;
-      border-radius: 8px;
-      border: none;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background: #0f0f17; color: #fff; min-height: 100vh; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 1rem; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+    .logo { font-size: 1.5rem; font-weight: 700; letter-spacing: 1px; }
+    .hamburger { cursor: pointer; width: 28px; height: 22px; display: flex; flex-direction: column; justify-content: space-between; }
+    .hamburger div { height: 4px; background: #fff; border-radius: 3px; }
+    nav { position: relative; }
+    .menu { position: absolute; top: 100%; right: 0; background: #1f1f35; border-radius: 10px; padding: .75rem 1rem; display: none; flex-direction: column; gap: .5rem; width: 220px; margin-top: 8px; }
+    .menu.active { display: flex; }
+    .menu a { color: #fff; text-decoration: none; font-size: .9rem; }
+    .section { background: #1f1f35; margin: 1rem 0; padding: 1.25rem 1rem; border-radius: 12px; }
+    h1, h2 { margin-bottom: .5rem; }
+    .btn { display: inline-block; padding: .6rem 1.2rem; border-radius: 8px; background: #00aaff; color: #fff; text-decoration: none; font-weight: 600; cursor: pointer; }
+    .small { font-size: .85rem; opacity: .85; }
+    form { display: flex; flex-direction: column; gap: .75rem; margin-top: .5rem; }
+    input, textarea { padding: .75rem; border-radius: 6px; border: none; font-size: 1rem; }
+    textarea { resize: vertical; min-height: 100px; }
+    .flex { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .tagline { margin: 1rem 0; font-size: 1.1rem; }
+    .footer { margin-top: 2rem; text-align: center; font-size: .75rem; opacity: .7; }
+    .code-box { background: #0f172a; padding: .75rem; border-radius: 8px; font-family: monospace; overflow-x: auto; }
+    .link { color: #00d4ff; }
   </style>
 </head>
 
 <body>
-  <nav>
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <div class="menu" id="menu">
-      <a href="#register">Register / Login</a>
-      <a href="#workout">Workout (Coming Soon)</a>
-      <a href="#upload">Upload Content</a>
-      <a href="#share">Share a Moment</a>
-      <a href="#join">Join Infine8 Team</a>
-      <a href="#bug">Report a Bug</a>
-    </div>
-  </nav>
+  <div class="container">
+    <header>
+      <div class="logo">Infine8 Pages</div>
+      <nav>
+        <div class="hamburger" onclick="toggleMenu()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="menu" id="menu">
+          <a href="#onecode">OneCode (Coming Soon)</a>
+          <a href="#codes">Codes</a>
+          <a href="#share">Share a Moment</a>
+          <a href="#join">Join Infine8 Team</a>
+          <a href="#bug">Report a Bug</a>
+          <a href="#whatsapp">WhatsApp</a>
+        </div>
+      </nav>
+    </header>
 
-  <header>
-    Welcome to <strong>Infine8 Pages</strong>
-  </header>
-  <div class="btn-container">
-    <a href="#register" class="btn">Register</a>
-    <a href="#login" class="btn">Login</a>
+    <div class="section" id="onecode">
+      <h2>OneCode</h2>
+      <p class="tagline">Weekly / daily code drops. Right now: <strong>Coming Soon</strong>. You'll get the real links from the videos soon.</p>
+      <div class="code-box">Summer Workout: coming soon...</div>
+    </div>
+
+    <div class="section" id="codes">
+      <h2>Codes</h2>
+      <p class="small">Every week or day, the new code that you drop in your videos will go here. You can update this manually for now.</p>
+      <div class="code-box">No code yet. Stay tuned.</div>
+    </div>
+
+    <div class="section" id="share">
+      <h2>Share a Moment</h2>
+      <p class="small">Send me something you want featured / shared. It goes straight to the email.</p>
+      <form action="https://formsubmit.co/burra.mohan.krishna@outlook.com" method="POST">
+        <input type="hidden" name="_subject" value="Share a Moment from site">
+        <input type="text" name="name" placeholder="Your name" required />
+        <textarea name="moment" placeholder="Describe the moment..." required></textarea>
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </div>
+
+    <div class="section" id="join">
+      <h2>Join Infine8 Team</h2>
+      <p class="small">Want in? Drop your pitch here.</p>
+      <form action="https://formsubmit.co/burra.mohan.krishna@outlook.com" method="POST">
+        <input type="hidden" name="_subject" value="Team Application">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email" required />
+        <textarea name="why" placeholder="Why you want to join" required></textarea>
+        <button class="btn" type="submit">Apply</button>
+      </form>
+    </div>
+
+    <div class="section" id="bug">
+      <h2>Report a Bug</h2>
+      <p class="small">Something broke? Tell me what and where. It shoots to the email.</p>
+      <form action="https://formsubmit.co/burra.mohan.krishna@outlook.com" method="POST">
+        <input type="hidden" name="_subject" value="Bug Report">
+        <input type="text" name="name" placeholder="Your name" required />
+        <textarea name="bug" placeholder="Describe the bug..." required></textarea>
+        <button class="btn" type="submit">Report</button>
+      </form>
+    </div>
+
+    <div class="section" id="whatsapp">
+      <h2>WhatsApp Channel</h2>
+      <p class="small">Jump into the WhatsApp group / channel for updates and codes.</p>
+      <p><a class="btn" href="#" target="_blank">Open WhatsApp</a></p>
+      <p class="small">Replace the above link with your real WhatsApp invite link when ready.</p>
+    </div>
+
+    <div class="footer">
+      <p>More updates coming soon. QR code in your videos points here. Stay tuned.</p>
+      <p>&copy; Infine8</p>
+    </div>
   </div>
-
-  <section id="register">
-    <h2>Register / Login</h2>
-    <form>
-      <input type="text" placeholder="Username" required>
-      <input type="email" placeholder="Email" required>
-      <input type="password" placeholder="Password" required>
-      <button class="btn" type="submit">Submit</button>
-    </form>
-  </section>
-
-  <section id="upload">
-    <h2>Upload Content</h2>
-    <form action="https://formsubmit.co/burra.mohan.krishna@outlook.com" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Describe your content..." required></textarea>
-      <button class="btn" type="submit">Upload</button>
-    </form>
-  </section>
-
-  <section id="share">
-    <h2>Share a Moment</h2>
-    <form action="https://formsubmit.co/burra.mohan.krishna@outlook.com" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <textarea name="moment" placeholder="Describe your moment..." required></textarea>
-      <button class="btn" type="submit">Share</button>
-    </form>
-  </section>
-
-  <section id="join">
-    <h2>Join the Infine8 Team</h2>
-    <form action="https://formsubmit.co/burra.mohan.krishna@outlook.com" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="why" placeholder="Why do you want to join?" required></textarea>
-      <button class="btn" type="submit">Apply</button>
-    </form>
-  </section>
-
-  <section id="bug">
-    <h2>Report a Bug</h2>
-    <form action="https://formsubmit.co/burra.mohan.krishna@outlook.com" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <textarea name="bug" placeholder="Describe the bug..." required></textarea>
-      <button class="btn" type="submit">Report</button>
-    </form>
-  </section>
-
-  <section id="workout">
-    <h2>Summer Workout</h2>
-    <p>Coming Soon...</p>
-  </section>
 
   <script>
     function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("active");
+      document.getElementById('menu').classList.toggle('active');
     }
+    // close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const menu = document.getElementById('menu');
+      const ham = document.querySelector('.hamburger');
+      if (!menu.contains(e.target) && !ham.contains(e.target)) {
+        menu.classList.remove('active');
+      }
+    });
   </script>
-
 </body>
 
 </html>
