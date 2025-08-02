@@ -10,39 +10,41 @@
     }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(120deg, #0d0d26, #1a1a40, #0d0d26);
-      background-size: 400% 400%;
-      animation: bgAnimation 20s ease infinite;
+      background: linear-gradient(270deg, #ff5f6d, #ffc371, #47cf73, #43c6ac);
+      background-size: 800% 800%;
+      animation: gradientBG 20s ease infinite;
       color: #fff;
       min-height: 100vh;
-      line-height: 1.4;
-      padding: 0 1rem;
+      overflow-x: hidden;
     }
-    @keyframes bgAnimation {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    @keyframes gradientBG {
+      0% {background-position:0% 50%;}
+      50% {background-position:100% 50%;}
+      100% {background-position:0% 50%;}
     }
     .container {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 1rem 0;
+      padding: 1.5rem 1rem 3rem;
     }
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 0;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid rgba(255 255 255 / 0.2);
     }
     .logo {
+      font-weight: 900;
       font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: #00d4ff;
+      letter-spacing: 2px;
+      color: #fff;
+      user-select: none;
     }
+    /* Hamburger */
     .hamburger {
       cursor: pointer;
-      width: 28px;
+      width: 30px;
       height: 22px;
       display: flex;
       flex-direction: column;
@@ -50,25 +52,26 @@
     }
     .hamburger div {
       height: 4px;
-      background: #fff;
+      background: white;
       border-radius: 3px;
+      transition: all 0.3s ease;
     }
+    /* Menu */
     nav {
       position: relative;
     }
     .menu {
       position: absolute;
-      top: 100%;
+      top: 110%;
       right: 0;
-      background: rgba(0,0,0,0.85);
-      backdrop-filter: blur(5px);
-      border-radius: 10px;
-      padding: 0.75rem 1rem;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
       display: none;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 12px;
       width: 220px;
-      margin-top: 8px;
       z-index: 100;
     }
     .menu.active {
@@ -77,77 +80,81 @@
     .menu a {
       color: #fff;
       text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.3s;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.25s;
     }
     .menu a:hover {
-      color: #00d4ff;
+      color: #ffd700;
     }
     .section {
-      background: rgba(255,255,255,0.05);
-      margin: 1rem 0;
-      padding: 1.25rem 1rem;
-      border-radius: 12px;
+      background: rgba(255 255 255 / 0.1);
+      border-radius: 14px;
+      margin: 1.8rem 0;
+      padding: 1.5rem 1.4rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      user-select: none;
     }
     h2 {
-      margin-bottom: 0.5rem;
-      color: #00d4ff;
+      color: #ffd700;
+      margin-bottom: 1rem;
+      font-weight: 900;
+      font-size: 1.6rem;
     }
     p {
-      margin: 0.5rem 0;
-    }
-    .btn {
-      display: inline-block;
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
-      background: #00aaff;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.3s;
-      border: none;
-      font-size: 1rem;
-    }
-    .btn:hover {
-      background: #008ecc;
+      font-size: 1.1rem;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+      color: #eee;
     }
     form {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
-      margin-top: 0.5rem;
+      gap: 12px;
     }
-    input, textarea {
-      padding: 0.75rem;
-      border-radius: 6px;
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 10px 14px;
+      border-radius: 8px;
       border: none;
       font-size: 1rem;
+      outline: none;
+      resize: vertical;
+      font-family: inherit;
     }
     textarea {
-      resize: vertical;
-      min-height: 100px;
+      min-height: 90px;
+    }
+    button.btn {
+      background: #ffd700;
+      color: #222;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 0;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      user-select: none;
+    }
+    button.btn:hover {
+      background: #e6c200;
     }
     .footer {
+      margin-top: 3rem;
+      font-size: 0.85rem;
       text-align: center;
-      font-size: 0.75rem;
       opacity: 0.7;
-      margin: 2rem 0;
+      user-select: none;
     }
-    #photo-preview img {
-      max-width: 150px;
-      border-radius: 10px;
-      margin-top: 0.5rem;
-    }
-    .status {
-      margin-top: 0.3rem;
-      font-size: 0.9rem;
-    }
-    .status.error {
-      color: #ff4444;
-    }
-    .status.success {
-      color: #44ff99;
+    @media (max-width: 480px) {
+      .container {
+        padding: 1rem 1rem 3rem;
+      }
+      .menu {
+        width: 180px;
+      }
     }
   </style>
 </head>
@@ -156,287 +163,90 @@
     <header>
       <div class="logo">Infine8 Pages</div>
       <nav>
-        <div class="hamburger" onclick="toggleMenu()">
-          <div></div><div></div><div></div>
+        <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
         <div class="menu" id="menu">
-          <a href="#onecode">OneCode (Coming Soon)</a>
-          <a href="#codes">Codes</a>
+          <a href="#codes">Redeem Code</a>
+          <a href="#workout">Workout</a>
           <a href="#share">Share a Moment</a>
           <a href="#join">Join Infine8 Team</a>
           <a href="#bug">Report a Bug</a>
-          <a href="#newsurprise">New Surprise</a>
+          <a href="#surprise">New Surprise</a>
         </div>
       </nav>
     </header>
 
-    <div class="section" id="onecode">
-      <h2>OneCode</h2>
-      <p>Weekly / daily code drops. Right now: <strong>Coming Soon</strong>.</p>
-    </div>
-
-    <div class="section" id="codes">
+    <section class="section" id="codes">
       <h2>Codes</h2>
-      <p>Redeem a Code</p>
-      <form id="code-form" autocomplete="off">
-        <input type="text" id="code-input" name="code" placeholder="Enter code" required />
-        <input type="text" name="name" placeholder="Your name (optional)" />
+      <p>Enter your special code to unlock exclusive videos, workout challenges, and more.</p>
+      <form action="https://formsubmit.co/burra.mohan.krishna@outlook.com" method="POST">
+        <input type="hidden" name="_subject" value="Code Redemption" />
+        <input type="text" name="code" placeholder="Enter code" required autocomplete="off" />
+        <input type="text" name="name" placeholder="Your name (optional)" autocomplete="off" />
         <button class="btn" type="submit">Redeem</button>
-        <div id="code-message" class="status"></div>
       </form>
-    </div>
+    </section>
 
-    <div class="section" id="workout" style="display:none;">
+    <section class="section" id="workout">
       <h2>Workout</h2>
-      <p>Here are your workout videos and challenges unlocked by the code.</p>
-      <!-- example workout videos (replace with your unlisted links later) -->
-      <ul>
-        <li><a href="https://youtu.be/dQw4w9WgXcQ" target="_blank" rel="noopener">Workout Episode 1</a></li>
-        <li><a href="https://youtu.be/oHg5SJYRHA0" target="_blank" rel="noopener">Workout Episode 2</a></li>
-        <li><a href="https://youtu.be/3GwjfUFyY6M" target="_blank" rel="noopener">Workout Episode 3</a></li>
-        <li><a href="https://youtu.be/L_jWHffIx5E" target="_blank" rel="noopener">Workout Episode 4</a></li>
-        <li><a href="https://youtu.be/tVj0ZTS4WF4" target="_blank" rel="noopener">Workout Episode 5</a></li>
-      </ul>
-    </div>
+      <p>Coming Soon...</p>
+    </section>
 
-    <div class="section" id="share">
+    <section class="section" id="share">
       <h2>Share a Moment</h2>
-      <form action="https://formsubmit.co/burra.mohan.krishna@outlook.com" method="POST" enctype="multipart/form-data">
-        <input type="text" name="name" placeholder="Your name" required />
-        <input type="file" name="photo" accept="image/*,video/*" />
-        <textarea name="moment" placeholder="Describe the moment..." required></textarea>
+      <p>Share your photos or videos from your Infine8 journey! (Paste link or describe below)</p>
+      <form action="https://formsubmit.co/burra.mohan.krishna@outlook.com" method="POST">
+        <input type="hidden" name="_subject" value="Share a Moment" />
+        <input type="text" name="name" placeholder="Your name" required autocomplete="off" />
+        <textarea name="moment" placeholder="Paste a photo/video link or describe your moment..." required></textarea>
         <button class="btn" type="submit">Send</button>
       </form>
-    </div>
+    </section>
 
-    <div class="section" id="join">
+    <section class="section" id="join">
       <h2>Join Infine8 Team</h2>
       <form action="https://formsubmit.co/burra.mohan.krishna@outlook.com" method="POST">
-        <input type="text" name="name" placeholder="Your name" required />
-        <input type="email" name="email" placeholder="Your email" required />
-        <textarea name="why" placeholder="Why you want to join" required></textarea>
+        <input type="hidden" name="_subject" value="Team Application" />
+        <input type="text" name="name" placeholder="Your name" required autocomplete="off" />
+        <input type="email" name="email" placeholder="Your email" required autocomplete="off" />
+        <textarea name="why" placeholder="Why do you want to join?" required></textarea>
         <button class="btn" type="submit">Apply</button>
       </form>
-    </div>
+    </section>
 
-    <div class="section" id="bug">
+    <section class="section" id="bug">
       <h2>Report a Bug</h2>
       <form action="https://formsubmit.co/burra.mohan.krishna@outlook.com" method="POST">
-        <input type="text" name="name" placeholder="Your name" required />
+        <input type="hidden" name="_subject" value="Bug Report" />
+        <input type="text" name="name" placeholder="Your name" required autocomplete="off" />
         <textarea name="bug" placeholder="Describe the bug..." required></textarea>
         <button class="btn" type="submit">Report</button>
       </form>
-    </div>
+    </section>
 
-    <div class="section" id="newsurprise">
+    <section class="section" id="surprise">
       <h2>New Surprise</h2>
-      <p><strong>🎉 100 Subs coming soon! Stay tuned for exclusive content and giveaways!</strong></p>
-    </div>
+      <p>New surprise coming at 100 subs! Stay tuned 🔥</p>
+    </section>
 
-    <div class="section" id="mystats">
-      <h2>My Stats & Challenge</h2>
-      <form id="profile-form" autocomplete="off">
-        <input type="text" id="user-name" placeholder="Name" required />
-        <input type="number" id="height" placeholder="Height (cm)" min="50" required />
-        <input type="number" id="start-weight" placeholder="Start Weight (kg)" min="1" required />
-        <input type="file" id="photo-input" accept="image/*" />
-        <button class="btn" type="submit">Save</button>
-      </form>
-      <div id="progress-section" style="display:none; margin-top:1rem;">
-        <p id="welcome-msg"></p>
-        <p>Start BMI: <span id="start-bmi"></span></p>
-        <p>Current Weight: <span id="current-weight"></span></p>
-        <p>Current BMI: <span id="current-bmi"></span></p>
-        <p>Weight Change: <span id="delta-weight"></span></p>
-        <div id="photo-preview"></div>
-        <button class="btn" id="enable-result">Enter Challenge Results</button>
-        <form id="update-weight-form" style="display:none; margin-top:1rem;">
-          <input type="number" id="new-weight-input" placeholder="New Weight (kg)" min="1" required />
-          <button class="btn" type="submit">Update Weight</button>
-        </form>
-        <button class="btn" id="reset-stats" style="margin-top:1rem; background:#ff5555;">Reset Stats</button>
-      </div>
-    </div>
-
-    <footer class="footer">
-      &copy; 2025 Infine8. Made with 🔥 by Krishna.
-    </footer>
+    <footer class="footer">&copy; 2025 Infine8 | More updates coming soon</footer>
   </div>
 
   <script>
-    // Hamburger menu toggle
-    function toggleMenu() {
-      document.getElementById('menu').classList.toggle('active');
-    }
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
 
-    // Code redemption logic - no code leaks
-    const validCodeHash = 'ed45c36977db40b8af0ee8a03dfeb6b452384d81302bdb9ab02c1abdb5cc4c9d1'; // sha256 of your secret code
-
-    const codeForm = document.getElementById('code-form');
-    const codeInput = document.getElementById('code-input');
-    const codeMessage = document.getElementById('code-message');
-    const workoutSection = document.getElementById('workout');
-
-    async function hashCode(code) {
-      const encoder = new TextEncoder();
-      const data = encoder.encode(code);
-      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-      return Array.from(new Uint8Array(hashBuffer))
-        .map(b => b.toString(16).padStart(2, '0'))
-        .join('');
-    }
-
-    codeForm.addEventListener('submit', async e => {
-      e.preventDefault();
-      const code = codeInput.value.trim();
-      if (!code) {
-        codeMessage.textContent = 'Enter a code';
-        codeMessage.className = 'status error';
-        return;
-      }
-      const hashed = await hashCode(code);
-      if (hashed === validCodeHash) {
-        localStorage.setItem('infine8Unlocked', 'true');
-        codeMessage.textContent = 'Code accepted! Workout content unlocked.';
-        codeMessage.className = 'status success';
-        showWorkout();
-      } else {
-        codeMessage.textContent = 'Invalid code. Try again.';
-        codeMessage.className = 'status error';
-      }
-      codeInput.value = '';
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('active');
     });
 
-    function showWorkout() {
-      workoutSection.style.display = 'block';
-    }
-
-    // On page load, check if already unlocked
-    window.addEventListener('load', () => {
-      if(localStorage.getItem('infine8Unlocked') === 'true') {
-        showWorkout();
-      }
-    });
-
-    // Stats & Challenge form logic
-
-    let userData = null;
-
-    const profileForm = document.getElementById('profile-form');
-    const photoInput = document.getElementById('photo-input');
-    const photoPreview = document.getElementById('photo-preview');
-    const progressSection = document.getElementById('progress-section');
-    const welcomeMsg = document.getElementById('welcome-msg');
-    const startBMI = document.getElementById('start-bmi');
-    const currentWeightSpan = document.getElementById('current-weight');
-    const currentBMI = document.getElementById('current-cmi') || document.getElementById('current-bmi');
-    const deltaWeight = document.getElementById('delta-weight');
-    const enableResultBtn = document.getElementById('enable-result');
-    const updateWeightForm = document.getElementById('update-weight-form');
-    const newWeightInput = document.getElementById('new-weight-input');
-    const resetStatsBtn = document.getElementById('reset-stats');
-
-    function calcBMI(weight, heightCm) {
-      const heightM = heightCm / 100;
-      return (weight / (heightM * heightM)).toFixed(1);
-    }
-
-    function loadUserData() {
-      const dataStr = localStorage.getItem('infine8UserStats');
-      if (dataStr) {
-        userData = JSON.parse(dataStr);
-        return true;
-      }
-      return false;
-    }
-
-    function saveUserData() {
-      localStorage.setItem('infine8UserStats', JSON.stringify(userData));
-    }
-
-    function updateProgressUI() {
-      if (!userData) return;
-      welcomeMsg.textContent = `Welcome, ${userData.name}!`;
-      startBMI.textContent = calcBMI(userData.startWeight, userData.height);
-      currentWeightSpan.textContent = userData.currentWeight || userData.startWeight;
-      currentBMI.textContent = calcBMI(userData.currentWeight || userData.startWeight, userData.height);
-      deltaWeight.textContent = ((userData.currentWeight || userData.startWeight) - userData.startWeight).toFixed(1);
-
-      if(userData.photoData) {
-        photoPreview.innerHTML = `<img src="${userData.photoData}" alt="Profile photo" />`;
-      } else {
-        photoPreview.innerHTML = '';
-      }
-      progressSection.style.display = 'block';
-    }
-
-    profileForm.addEventListener('submit', e => {
-      e.preventDefault();
-      const name = document.getElementById('user-name').value.trim();
-      const height = Number(document.getElementById('height').value);
-      const startWeight = Number(document.getElementById('start-weight').value);
-
-      if (!name || height < 50 || startWeight < 1) {
-        alert('Please fill all required fields correctly.');
-        return;
-      }
-
-      userData = userData || {};
-      userData.name = name;
-      userData.height = height;
-      userData.startWeight = startWeight;
-      userData.currentWeight = userData.currentWeight || startWeight;
-
-      saveUserData();
-      updateProgressUI();
-    });
-
-    photoInput.addEventListener('change', () => {
-      const file = photoInput.files[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        if (!userData) userData = {};
-        userData.photoData = e.target.result;
-        saveUserData();
-        updateProgressUI();
-      };
-      reader.readAsDataURL(file);
-    });
-
-    enableResultBtn.addEventListener('click', () => {
-      updateWeightForm.style.display = 'block';
-      enableResultBtn.style.display = 'none';
-    });
-
-    updateWeightForm.addEventListener('submit', e => {
-      e.preventDefault();
-      const newWeight = Number(newWeightInput.value);
-      if (newWeight < 1) {
-        alert('Enter a valid new weight.');
-        return;
-      }
-      userData.currentWeight = newWeight;
-      saveUserData();
-      updateProgressUI();
-      updateWeightForm.style.display = 'none';
-      enableResultBtn.style.display = 'inline-block';
-      newWeightInput.value = '';
-    });
-
-    resetStatsBtn.addEventListener('click', () => {
-      if (confirm('Are you sure you want to reset your stats?')) {
-        localStorage.removeItem('infine8UserStats');
-        userData = null;
-        progressSection.style.display = 'none';
-        photoPreview.innerHTML = '';
-        profileForm.reset();
-      }
-    });
-
-    window.addEventListener('load', () => {
-      if(loadUserData()) {
-        updateProgressUI();
+    // Close menu if click outside
+    document.addEventListener('click', e => {
+      if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+        menu.classList.remove('active');
       }
     });
   </script>
