@@ -1,193 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Infine8 Pages</title>
-<style>
-  /* Reset and base */
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0; padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #ff9f43 0%, #00d4ff 100%);
-    color: #0f1020;
-    min-height: 100vh;
-  }
-  .container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    background: rgba(255 255 255 / 0.9);
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  }
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #ccc;
-  }
-  .logo {
-    font-weight: 900;
-    font-size: 2rem;
-    letter-spacing: 0.05em;
-    color: #0a0a23;
-  }
-  nav {
-    position: relative;
-  }
-  /* Hamburger */
-  .hamburger {
-    width: 30px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 22px;
-  }
-  .hamburger div {
-    width: 100%;
-    height: 4px;
-    background-color: #0f1020;
-    border-radius: 2px;
-  }
-  /* Menu */
-  .menu {
-    position: absolute;
-    right: 0;
-    top: 40px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    display: none;
-    flex-direction: column;
-    min-width: 180px;
-    z-index: 1000;
-  }
-  .menu.active {
-    display: flex;
-  }
-  .menu a {
-    padding: 12px 16px;
-    text-decoration: none;
-    color: #0f1020;
-    font-weight: 600;
-    border-bottom: 1px solid #ddd;
-    transition: background-color 0.25s ease;
-  }
-  .menu a:last-child {
-    border-bottom: none;
-  }
-  .menu a:hover {
-    background-color: #00d4ff;
-    color: white;
-  }
-  section {
-    margin-top: 25px;
-  }
-  h2 {
-    font-size: 1.8rem;
-    margin-bottom: 12px;
-    color: #0a0a23;
-  }
-  p.small {
-    font-size: 0.9rem;
-    margin-top: -10px;
-    margin-bottom: 15px;
-    color: #555;
-  }
-  input, textarea, button, select {
-    font-size: 1rem;
-    padding: 10px 12px;
-    margin-bottom: 12px;
-    border: 2px solid #0f1020;
-    border-radius: 8px;
-    width: 100%;
-    font-family: inherit;
-  }
-  input[type="file"] {
-    padding: 3px;
-  }
-  button.btn {
-    background-color: #0f1020;
-    color: #fff;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border: none;
-  }
-  button.btn:hover {
-    background-color: #00d4ff;
-    color: #0f1020;
-  }
-  .status {
-    margin-top: 8px;
-    font-weight: 700;
-  }
-  .status.success {
-    color: green;
-  }
-  .status.error {
-    color: red;
-  }
-  #photo-preview img {
-    max-width: 150px;
-    max-height: 150px;
-    border-radius: 8px;
-    margin-top: 8px;
-    display: block;
-  }
-  #media-preview img,
-  #media-preview video {
-    max-width: 200px;
-    border-radius: 8px;
-    margin-top: 8px;
-  }
-  footer.footer {
-    margin-top: 50px;
-    text-align: center;
-    font-weight: 600;
-    color: #0a0a23;
-  }
-  /* Responsive */
-  @media (min-width: 600px) {
-    .menu {
-      position: static;
-      display: flex !important;
-      flex-direction: row;
-      background: transparent;
-      box-shadow: none;
-      min-width: auto;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Infine8 Pages</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
     }
-    .menu a {
-      border: none;
-      margin-left: 16px;
-      padding: 0;
-      color: #0f1020;
-      font-weight: 600;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(120deg, #0d0d26, #1a1a40, #0d0d26);
+      background-size: 400% 400%;
+      animation: bgAnimation 20s ease infinite;
+      color: #fff;
+      min-height: 100vh;
+      line-height: 1.4;
+      padding: 0 1rem;
+    }
+    @keyframes bgAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 1rem 0;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #00d4ff;
     }
     .hamburger {
-      display: none;
+      cursor: pointer;
+      width: 28px;
+      height: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-  }
-</style>
+    .hamburger div {
+      height: 4px;
+      background: #fff;
+      border-radius: 3px;
+    }
+    nav {
+      position: relative;
+    }
+    .menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(5px);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      display: none;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 220px;
+      margin-top: 8px;
+      z-index: 100;
+    }
+    .menu.active {
+      display: flex;
+    }
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+    .menu a:hover {
+      color: #00d4ff;
+    }
+    .section {
+      background: rgba(255,255,255,0.05);
+      margin: 1rem 0;
+      padding: 1.25rem 1rem;
+      border-radius: 12px;
+    }
+    h2 {
+      margin-bottom: 0.5rem;
+      color: #00d4ff;
+    }
+    p {
+      margin: 0.5rem 0;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      background: #00aaff;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      border: none;
+      font-size: 1rem;
+    }
+    .btn:hover {
+      background: #008ecc;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+    input, textarea {
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .footer {
+      text-align: center;
+      font-size: 0.75rem;
+      opacity: 0.7;
+      margin: 2rem 0;
+    }
+    #photo-preview img {
+      max-width: 150px;
+      border-radius: 10px;
+      margin-top: 0.5rem;
+    }
+    .status {
+      margin-top: 0.3rem;
+      font-size: 0.9rem;
+    }
+    .status.error {
+      color: #ff4444;
+    }
+    .status.success {
+      color: #44ff99;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <header>
       <div class="logo">Infine8 Pages</div>
       <nav>
-        <div class="hamburger" id="hamburger">
+        <div class="hamburger" onclick="toggleMenu()">
           <div></div><div></div><div></div>
         </div>
         <div class="menu" id="menu">
-          <a href="#codes">Redeem Code</a>
-          <a href="#workout">Workout</a>
-          <a href="#mystats">My Stats</a>
+          <a href="#onecode">OneCode (Coming Soon)</a>
+          <a href="#codes">Codes</a>
           <a href="#share">Share a Moment</a>
           <a href="#join">Join Infine8 Team</a>
           <a href="#bug">Report a Bug</a>
@@ -196,142 +170,120 @@
       </nav>
     </header>
 
-    <section id="codes">
-      <h2>Redeem Code</h2>
-      <p class="small">Enter the weekly code from the videos to unlock exclusive workout episodes and challenges.</p>
-      <form id="codeForm">
-        <input type="text" id="codeInput" placeholder="Enter code" required />
-        <button class="btn" type="submit" style="max-width: 180px;">Redeem</button>
-        <p id="codeMessage" class="status"></p>
-      </form>
-    </section>
+    <div class="section" id="onecode">
+      <h2>OneCode</h2>
+      <p>Weekly / daily code drops. Right now: <strong>Coming Soon</strong>.</p>
+    </div>
 
-    <section id="workout">
+    <div class="section" id="codes">
+      <h2>Codes</h2>
+      <p>Redeem a Code</p>
+      <form id="code-form" autocomplete="off">
+        <input type="text" id="code-input" name="code" placeholder="Enter code" required />
+        <input type="text" name="name" placeholder="Your name (optional)" />
+        <button class="btn" type="submit">Redeem</button>
+        <div id="code-message" class="status"></div>
+      </form>
+    </div>
+
+    <div class="section" id="workout" style="display:none;">
       <h2>Workout</h2>
-      <div id="workoutContent">
-        <p><em>Unlock content by redeeming the code above.</em></p>
-      </div>
-    </section>
+      <p>Here are your workout videos and challenges unlocked by the code.</p>
+      <!-- example workout videos (replace with your unlisted links later) -->
+      <ul>
+        <li><a href="https://youtu.be/dQw4w9WgXcQ" target="_blank" rel="noopener">Workout Episode 1</a></li>
+        <li><a href="https://youtu.be/oHg5SJYRHA0" target="_blank" rel="noopener">Workout Episode 2</a></li>
+        <li><a href="https://youtu.be/3GwjfUFyY6M" target="_blank" rel="noopener">Workout Episode 3</a></li>
+        <li><a href="https://youtu.be/L_jWHffIx5E" target="_blank" rel="noopener">Workout Episode 4</a></li>
+        <li><a href="https://youtu.be/tVj0ZTS4WF4" target="_blank" rel="noopener">Workout Episode 5</a></li>
+      </ul>
+    </div>
 
-    <section id="mystats">
-      <h2>My Stats & Challenge Progress</h2>
-      <p class="small">Enter your name, height (cm), starting weight (kg), and optional photo. After the challenge is done you can log your new weight.</p>
-
-      <form id="profile-form">
-        <input type="text" id="user-name" placeholder="Name" required />
-        <input type="number" id="height" placeholder="Height (cm)" required min="50" />
-        <input type="number" id="start-weight" placeholder="Starting Weight (kg)" required min="1" />
-        <label style="font-weight: 600; margin-bottom: 10px;">
-          Profile Photo (optional):
-          <input type="file" id="photo-input" accept="image/*" />
-        </label>
-        <div id="photo-preview"></div>
-        <button class="btn" type="submit" style="max-width: 180px;">Save Profile</button>
-      </form>
-
-      <div id="progress-section" style="display:none; margin-top: 20px;">
-        <h3>Progress</h3>
-        <p id="welcome-msg" style="font-weight:700;"></p>
-        <p>Starting BMI: <span id="start-bmi"></span></p>
-        <p>Current Weight: <span id="current-weight"></span> kg</p>
-        <p>Current BMI: <span id="current-bmi"></span></p>
-        <p>Weight Change: <span id="delta-weight"></span> kg</p>
-
-        <div id="challenge-result-wrapper" style="margin-top: 20px;">
-          <div id="challenge-coming-soon">
-            <p><strong>Challenge Result:</strong> Coming soon. After the challenge, click below to log your new weight.</p>
-            <button class="btn" id="enable-result" type="button" style="max-width: 200px;">Log Challenge Result</button>
-          </div>
-
-          <form id="update-weight-form" style="margin-top: 10px; display:none;">
-            <input type="number" id="new-weight-input" placeholder="Enter new weight (kg)" min="1" required />
-            <button class="btn" type="submit" style="max-width: 180px;">Update Weight</button>
-          </form>
-        </div>
-
-        <button class="btn" id="reset-stats" style="background:#d33; margin-top: 20px; max-width: 180px;">Reset Stats</button>
-      </div>
-    </section>
-
-    <section id="share">
+    <div class="section" id="share">
       <h2>Share a Moment</h2>
-      <p class="small">Upload photos or videos to share with the community.</p>
-      <form id="share-form" action="https://formsubmit.co/your-email@example.com" method="POST" enctype="multipart/form-data">
-        <input type="file" id="share-media-input" name="media" accept="image/*,video/*" />
-        <div id="media-preview"></div>
-        <textarea name="message" rows="3" placeholder="Add a message (optional)"></textarea>
-        <button class="btn" type="submit" style="max-width: 180px;">Share</button>
+      <form action="https://formsubmit.co/burra.mohan.krishna@outlook.com" method="POST" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="file" name="photo" accept="image/*,video/*" />
+        <textarea name="moment" placeholder="Describe the moment..." required></textarea>
+        <button class="btn" type="submit">Send</button>
       </form>
-    </section>
+    </div>
 
-    <section id="join">
+    <div class="section" id="join">
       <h2>Join Infine8 Team</h2>
-      <p class="small">Interested in collaborating? Send us a message to join the team!</p>
-      <form action="https://formsubmit.co/your-email@example.com" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" rows="3" placeholder="Why do you want to join?" required></textarea>
-        <button class="btn" type="submit" style="max-width: 180px;">Send</button>
+      <form action="https://formsubmit.co/burra.mohan.krishna@outlook.com" method="POST">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email" required />
+        <textarea name="why" placeholder="Why you want to join" required></textarea>
+        <button class="btn" type="submit">Apply</button>
       </form>
-    </section>
+    </div>
 
-    <section id="bug">
+    <div class="section" id="bug">
       <h2>Report a Bug</h2>
-      <p class="small">Found something off? Let us know to fix it ASAP.</p>
-      <form action="https://formsubmit.co/your-email@example.com" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" rows="4" placeholder="Describe the bug" required></textarea>
-        <button class="btn" type="submit" style="max-width: 180px;">Report</button>
+      <form action="https://formsubmit.co/burra.mohan.krishna@outlook.com" method="POST">
+        <input type="text" name="name" placeholder="Your name" required />
+        <textarea name="bug" placeholder="Describe the bug..." required></textarea>
+        <button class="btn" type="submit">Report</button>
       </form>
-    </section>
+    </div>
 
-    <section id="newsurprise">
+    <div class="section" id="newsurprise">
       <h2>New Surprise</h2>
-      <p><strong>100 Subs coming soon! Stay tuned for more exclusive content and surprises 🎉</strong></p>
-    </section>
+      <p><strong>🎉 100 Subs coming soon! Stay tuned for exclusive content and giveaways!</strong></p>
+    </div>
+
+    <div class="section" id="mystats">
+      <h2>My Stats & Challenge</h2>
+      <form id="profile-form" autocomplete="off">
+        <input type="text" id="user-name" placeholder="Name" required />
+        <input type="number" id="height" placeholder="Height (cm)" min="50" required />
+        <input type="number" id="start-weight" placeholder="Start Weight (kg)" min="1" required />
+        <input type="file" id="photo-input" accept="image/*" />
+        <button class="btn" type="submit">Save</button>
+      </form>
+      <div id="progress-section" style="display:none; margin-top:1rem;">
+        <p id="welcome-msg"></p>
+        <p>Start BMI: <span id="start-bmi"></span></p>
+        <p>Current Weight: <span id="current-weight"></span></p>
+        <p>Current BMI: <span id="current-bmi"></span></p>
+        <p>Weight Change: <span id="delta-weight"></span></p>
+        <div id="photo-preview"></div>
+        <button class="btn" id="enable-result">Enter Challenge Results</button>
+        <form id="update-weight-form" style="display:none; margin-top:1rem;">
+          <input type="number" id="new-weight-input" placeholder="New Weight (kg)" min="1" required />
+          <button class="btn" type="submit">Update Weight</button>
+        </form>
+        <button class="btn" id="reset-stats" style="margin-top:1rem; background:#ff5555;">Reset Stats</button>
+      </div>
+    </div>
 
     <footer class="footer">
-      &copy; 2025 Infine8 | All rights reserved
+      &copy; 2025 Infine8. Made with 🔥 by Krishna.
     </footer>
   </div>
 
   <script>
-    // Hamburger toggle
-    const hamburger = document.getElementById('hamburger');
-    const menu = document.getElementById('menu');
-    hamburger.addEventListener('click', () => {
-      menu.classList.toggle('active');
-    });
-
-    // Code redemption logic
-    const codeForm = document.getElementById('codeForm');
-    const codeInput = document.getElementById('codeInput');
-    const codeMessage = document.getElementById('codeMessage');
-    const workoutContent = document.getElementById('workoutContent');
-
-    // Hash function for code check (sha-256 in JS)
-    async function hashCode(code) {
-      const msgBuffer = new TextEncoder().encode(code.toUpperCase());
-      const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-      const hashArray = Array.from(new Uint8Array(hashBuffer));
-      return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    // Hamburger menu toggle
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
     }
 
-    // Pre-hashed valid code for "INF8DROP1"
-    const validCodeHash = 'ed45c36977db40b8af0ee8a03dfeb6b452384d81302bdb9ab02c1abdb5cc4c9d1';
+    // Code redemption logic - no code leaks
+    const validCodeHash = 'ed45c36977db40b8af0ee8a03dfeb6b452384d81302bdb9ab02c1abdb5cc4c9d1'; // sha256 of your secret code
 
-    function showWorkout() {
-      workoutContent.innerHTML = `
-        <h3>Your Workout Episodes</h3>
-        <ul>
-          <li><a href="https://www.youtube.com/watch?v=video1" target="_blank">Episode 1</a></li>
-          <li><a href="https://www.youtube.com/watch?v=video2" target="_blank">Episode 2</a></li>
-          <li><a href="https://www.youtube.com/watch?v=video3" target="_blank">Episode 3</a></li>
-          <li><a href="https://www.youtube.com/watch?v=video4" target="_blank">Episode 4</a></li>
-          <li><a href="https://www.youtube.com/watch?v=video5" target="_blank">Episode 5</a></li>
-        </ul>
-      `;
+    const codeForm = document.getElementById('code-form');
+    const codeInput = document.getElementById('code-input');
+    const codeMessage = document.getElementById('code-message');
+    const workoutSection = document.getElementById('workout');
+
+    async function hashCode(code) {
+      const encoder = new TextEncoder();
+      const data = encoder.encode(code);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      return Array.from(new Uint8Array(hashBuffer))
+        .map(b => b.toString(16).padStart(2, '0'))
+        .join('');
     }
 
     codeForm.addEventListener('submit', async e => {
@@ -355,16 +307,19 @@
       codeInput.value = '';
     });
 
-    // On page load check if unlocked
+    function showWorkout() {
+      workoutSection.style.display = 'block';
+    }
+
+    // On page load, check if already unlocked
     window.addEventListener('load', () => {
-      if (localStorage.getItem('infine8Unlocked') === 'true') {
+      if(localStorage.getItem('infine8Unlocked') === 'true') {
         showWorkout();
-        codeMessage.textContent = 'You already unlocked workout content!';
-        codeMessage.className = 'status success';
       }
     });
 
-    // My Stats & Challenge section code
+    // Stats & Challenge form logic
+
     let userData = null;
 
     const profileForm = document.getElementById('profile-form');
@@ -374,7 +329,7 @@
     const welcomeMsg = document.getElementById('welcome-msg');
     const startBMI = document.getElementById('start-bmi');
     const currentWeightSpan = document.getElementById('current-weight');
-    const currentBMI = document.getElementById('current-bmi');
+    const currentBMI = document.getElementById('current-cmi') || document.getElementById('current-bmi');
     const deltaWeight = document.getElementById('delta-weight');
     const enableResultBtn = document.getElementById('enable-result');
     const updateWeightForm = document.getElementById('update-weight-form');
@@ -408,14 +363,14 @@
       deltaWeight.textContent = ((userData.currentWeight || userData.startWeight) - userData.startWeight).toFixed(1);
 
       if(userData.photoData) {
-        photoPreview.innerHTML = `<img src="${userData.photoData}" alt="Profile photo">`;
+        photoPreview.innerHTML = `<img src="${userData.photoData}" alt="Profile photo" />`;
       } else {
         photoPreview.innerHTML = '';
       }
       progressSection.style.display = 'block';
     }
 
-    profileForm.addEventListener('submit', (e) => {
+    profileForm.addEventListener('submit', e => {
       e.preventDefault();
       const name = document.getElementById('user-name').value.trim();
       const height = Number(document.getElementById('height').value);
@@ -454,7 +409,7 @@
       enableResultBtn.style.display = 'none';
     });
 
-    updateWeightForm.addEventListener('submit', (e) => {
+    updateWeightForm.addEventListener('submit', e => {
       e.preventDefault();
       const newWeight = Number(newWeightInput.value);
       if (newWeight < 1) {
@@ -479,26 +434,9 @@
       }
     });
 
-    // Share form media preview
-    const shareMediaInput = document.getElementById('share-media-input');
-    const mediaPreview = document.getElementById('media-preview');
-
-    shareMediaInput.addEventListener('change', () => {
-      mediaPreview.innerHTML = '';
-      const file = shareMediaInput.files[0];
-      if (!file) return;
-      if (file.type.startsWith('image/')) {
-        const img = document.createElement('img');
-        img.style.maxWidth = '150px';
-        img.style.borderRadius = '8px';
-        img.src = URL.createObjectURL(file);
-        mediaPreview.appendChild(img);
-      } else if (file.type.startsWith('video/')) {
-        const video = document.createElement('video');
-        video.controls = true;
-        video.style.maxWidth = '250px';
-        video.src = URL.createObjectURL(file);
-        mediaPreview.appendChild(video);
+    window.addEventListener('load', () => {
+      if(loadUserData()) {
+        updateProgressUI();
       }
     });
   </script>
